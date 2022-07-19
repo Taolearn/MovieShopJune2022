@@ -1,7 +1,21 @@
+using ApplicationCore.RepositoryContracts;
+using ApplicationCore.ServiceContracts;
+using Infrastructure.Repositories;
+using Infrastructure.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// First class Citizen
+builder.Services.AddScoped<IMovieService, MovieService>();
+builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+
+// older versions of .NET Frameowrk we did not had built-in DI, we had to rely on 3rd party DI Containers
+// Autofac, Ninject
+// Constructor Injection 99%
+// Method and Property Injection
 
 var app = builder.Build();
 
