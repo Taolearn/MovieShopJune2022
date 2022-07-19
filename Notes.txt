@@ -128,5 +128,30 @@ COnstructor Injection
 
 
 HomeController controller = new HomeController(new Logger(), new MovieService() );
-
 controller.Index();
+
+Entity Framework
+
+
+1.  ADO.NET Lower Level API's for accessing databases
+	write lots of code 
+	Manual and repeated Code
+
+2.  ORM => Object Ralational Mapping
+	micro ORM Dapper => StackOverflow (ASP.NET Core)
+	Database already
+		
+3.	Entity Framework Microsoft
+	Full ORM
+	Create the database with just C# Code
+	Can access the database without single line of SQL Code, using C# and LINQ
+	Save/Update/Delete
+
+EF Core
+
+Step 1. Create Entity class that you need with all the properties that matches with columns of the table
+	 2. Download the EF Core Packages from Nuget in the solution Microsoft.EntityFrameworkCore.SqlServer
+	 3. Establish the connection string (appsettings.json) of where you want to create the database
+	 4. Create DbContext -> Represents your Database
+		and DbSet => Represents your Tables properties
+	 5. Inject COnnection String in to DbContext from your Startup Project, using DI

@@ -1,7 +1,9 @@
 using ApplicationCore.RepositoryContracts;
 using ApplicationCore.ServiceContracts;
+using Infrastructure.Data;
 using Infrastructure.Repositories;
 using Infrastructure.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +12,18 @@ builder.Services.AddControllersWithViews();
 
 // First class Citizen
 builder.Services.AddScoped<IMovieService, MovieService>();
-builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+builder.Services.AddSingleton<IMovieRepository, MovieRepository>();
+
+
+
+// read the connection string from appsettings.json and inject connection string in to DbContext
+builder.Services.AddDbContext<MovieShopDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MovieShopDbConnection"));
+});
+
+
+// if controllername = ho,e then substite MocieMockservie for IMovieSerovce
 
 // older versions of .NET Frameowrk we did not had built-in DI, we had to rely on 3rd party DI Containers
 // Autofac, Ninject
