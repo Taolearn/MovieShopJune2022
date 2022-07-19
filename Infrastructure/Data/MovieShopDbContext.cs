@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ApplicationCore.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,14 @@ namespace Infrastructure.Data
 {
     public class MovieShopDbContext: DbContext
     {
-        public MovieShopDbContext(DbContextOptions<MovieShopDbContext> options): base(options)
+        public MovieShopDbContext(DbContextOptions<MovieShopDbContext> options) : base(options)
         {
 
         }
+
+        public DbSet<Movie> Movies { get; set; }
+        // genres
+        // cast
+        // user
     }
 }
