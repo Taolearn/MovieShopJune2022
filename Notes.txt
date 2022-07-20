@@ -155,3 +155,9 @@ Step 1. Create Entity class that you need with all the properties that matches w
 	 4. Create DbContext -> Represents your Database
 		and DbSet => Represents your Tables properties
 	 5. Inject COnnection String in to DbContext from your Startup Project, using DI
+	 6. Use EF Core Migrations to start creating database using Microsoft.EntityFrameworkCore.Design
+	 7. If Design package does not work use Microsoft.EntityFrameworkCore.Tools, install it in MVC (startup project)
+	 8. Make sure open Tools-> NugetPackage Manager Console
+	 9. Add your very first Migration with the command called Add-Migration InitialMigration
+	 10. Once you create the Migration make sure you check the migration file and then to apply that migration to the
+		database use command called update-database
