@@ -12,7 +12,7 @@ builder.Services.AddControllersWithViews();
 
 // First class Citizen
 builder.Services.AddScoped<IMovieService, MovieService>();
-builder.Services.AddSingleton<IMovieRepository, MovieRepository>();
+builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 
 
 
