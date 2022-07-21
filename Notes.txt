@@ -161,3 +161,8 @@ Step 1. Create Entity class that you need with all the properties that matches w
 	 9. Add your very first Migration with the command called Add-Migration InitialMigration
 	 10. Once you create the Migration make sure you check the migration file and then to apply that migration to the
 		database use command called update-database
+	 11. To make any changes to database always first change the entity and add new migration, never change directly
+		 in the database. Always go through the code
+	 12. 1. Data Annotations way
+		 2.	Fluent API way (much more powerful and usually preferred appraoach in larger projects)
+		 You can combine both approaches in a project
