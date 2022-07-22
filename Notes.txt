@@ -166,3 +166,13 @@ Step 1. Create Entity class that you need with all the properties that matches w
 	 12. 1. Data Annotations way
 		 2.	Fluent API way (much more powerful and usually preferred appraoach in larger projects)
 		 You can combine both approaches in a project
+
+
+
+ Server -> IIS - Windows based
+ Linux -> Ngix
+ 
+ ASP.NET allocate a thread to start executing the request
+
+ Limited number of threads T100 -> T1 to T100 -> Thread pool
+

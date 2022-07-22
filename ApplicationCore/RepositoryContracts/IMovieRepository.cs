@@ -14,10 +14,8 @@ namespace ApplicationCore.RepositoryContracts
 
         // method to get top 30 highest grossing movies
 
-        List<Movie> GetTop30HighestRevenueMovies();
-
-        List<Movie> GetTop30RatedMovies();
-
-        Movie GetById(int id);
+        Task<List<Movie>> GetTop30HighestRevenueMovies();
+        Task<List<Movie>> GetTop30RatedMovies();
+        Task<Movie> GetById(int id);
     }
 }

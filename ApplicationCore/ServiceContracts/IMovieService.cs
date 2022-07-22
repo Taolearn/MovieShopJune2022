@@ -9,10 +9,7 @@ namespace ApplicationCore.ServiceContracts
 {
     public interface IMovieService
     {
-        // Controllers will call Services
-
-      List<MovieCardModel>  GetTopRevenueMovies();
-
-        MovieDetailsModel GetMovieDetails(int movieId);   
+        Task<List<MovieCardModel>> GetTopRevenueMovies();
+        Task<MovieDetailsModel> GetMovieDetails(int movieId);
     }
 }
