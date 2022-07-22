@@ -176,3 +176,18 @@ Step 1. Create Entity class that you need with all the properties that matches w
 
  Limited number of threads T100 -> T1 to T100 -> Thread pool
 
+ 1000 genre 1 => page size 30
+ 
+ 1000/30 => 33+ 10 moies => 34 pages
+
+  Page 1 1-30
+  Page 2  offset (Pagenumber -1)*PageSize Take Fetch Page size =   31-60
+				(2-1)*30 = skip 30 take 30
+
+				Offet 30 fetch next 30 rows
+				skip(30) and Take(30)
+
+
+
+
+
