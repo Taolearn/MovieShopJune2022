@@ -188,6 +188,48 @@ Step 1. Create Entity class that you need with all the properties that matches w
 				skip(30) and Take(30)
 
 
+Authentication => Identity 
+
+public (annonymous)	=> Home Page, Movie Details, Cast Details, Privacy, Login and Register
+
+Authenticated  => BUY (check id user id loged in), redirect to login page
+			   => Review
+			   => Favorite
+			   => View Profile, Edit Profile
+			   => Purchases => list of movies user purchased
+			   => Favorites => list of movies user favorited
+
+Authorization (Admin Role)	   
+			   => Create Movie, Only User with Role of Admin
+			   => Create Genre
+			   => Create Cast
+			
+
+
+Register	=> 
+			Step 1 => Check if the email exist in the database or not
+				 If No => 
+						Store the info in the User table
+			
+1. Plain Text => BIG NO
+2. Encyprtion => NO
+3. Hashing => Better
+4. Hashing + Salt
+
+Registration
+
+U1  abc@abc.com   [ABc123!! + skfgbdskfbdsfb] => Hashing 1 => vsfvsgfsgsgsddsfdsfsdfsdfdsfsdfsd
+U2  xyx@bbs.com   [ABc123!! + vfdsfdsfsdffsf] => Hashing 1 => fsdfdsfdsfdsfdsfdsffghnjhfhdfbvxcv  
+U3  sdf#ddd.com	  [ABc123!! + dssadsadsadadd] => Hashing 1 => e56t5egfdbfdghfdgbxfcbcbcgbgcbgcbbd
+
+Login
+
+U1  abc@abc.com  [ABc123!! + skfgbdskfbdsfb] =>  Hashing 1 vsfvsgfsgsgsddsfdsfsdfsdfdsfsdfsd == vsfvsgfsgsgsddsfdsfsdfsdfdsfsdfsd
+
+
+
+
+
 
 
 
