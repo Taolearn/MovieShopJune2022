@@ -229,7 +229,29 @@ U1  abc@abc.com  [ABc123!! + skfgbdskfbdsfb] =>  Hashing 1 vsfvsgfsgsgsddsfdsfsd
 Model Binding in ASP.NET
 
 
+10:00 AM login page and succsws email/pass 
+Cookie -> Auth Cookie
+MovieShopAuthCookie -> 1 hr
+claims 
+userid
+email
+firstname
+last name
 
+roles {admin, hr, superadmin}
+
+Cookies are always sent to the server from browser automatically
+
+10:02 AM  account/profile
+		  account/editprofile
+		  user/purchases => { look for cooke in the http request  } 
+		   read the claims info and get the user id
+		   select * from Purchases where userid = 
+		   dataabase purcahse table
+		  user/favorites
+		  Filters -> [Authorization] 
+
+My Account or Edit Profile, View Purchased, View Favorites
 
 
 
