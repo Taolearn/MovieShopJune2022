@@ -1,6 +1,7 @@
 ﻿using ApplicationCore.Models;
 using ApplicationCore.ServiceContracts;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace MovieShopMVC.Controllers
 {
@@ -41,6 +42,7 @@ namespace MovieShopMVC.Controllers
             var user = await _accountService.ValidateUser(model);
             if (user == false)
             {
+                ModelState.AddModelError( "" , "Password is invalid");
                 return View(model);
             }
             return LocalRedirect("~/");
