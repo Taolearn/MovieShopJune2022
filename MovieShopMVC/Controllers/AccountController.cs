@@ -38,6 +38,12 @@ namespace MovieShopMVC.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Login");
+        }
+
         [HttpPost]
         public async Task<IActionResult> Login(UserLoginModel model)
         {
@@ -63,9 +69,9 @@ namespace MovieShopMVC.Controllers
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
             // create cookie with some expiration time
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));  
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
 
-            
+
 
             return LocalRedirect("~/");
         }
