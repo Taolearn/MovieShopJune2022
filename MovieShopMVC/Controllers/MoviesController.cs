@@ -13,14 +13,14 @@ namespace MovieShopMVC.Controllers
         }
 
         [HttpGet]
-        public async Task< IActionResult> Details(int id)
+        public async Task<IActionResult> Details(int id)
         {
             // T1
             // go to movie service -> movie repository and get movie details from Movies Table
 
             // We are making an I/O bound operation //
             // database call, File call, stream, network
-            
+
             // CPU bound operations
             // calculating a loan processing interat rate,
             // Image processing
@@ -31,6 +31,12 @@ namespace MovieShopMVC.Controllers
             // async await  2012 C# 5
             var movieDetails = await _movieService.GetMovieDetails(id);
             return View(movieDetails);
+        }
+
+        public async Task<ActionResult> GenreMovies(int id, int pageSize = 30, int page = 1)
+        {
+            var pagedMovies = await _movieService.GetMoviesByPagination(id, pageSize, page);
+            return View(pagedMovies);
         }
     }
 }
